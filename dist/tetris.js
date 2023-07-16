@@ -436,8 +436,10 @@
 
 				var cfg = this.config = utils.extend(options, defaults);
 				this.interval = consts.DEFAULT_INTERVAL;
-				var Level1 = document.getElementById("Level1");
-				console.log(Level1)
+				var Level1 = document.getElementById("music");
+				Level1.muted = true;
+				console.log(Level1);
+
 
 
 				views.init(this.id, cfg.maxWidth, cfg.maxHeight);
@@ -446,7 +448,6 @@
 
 				this.matrix = initMatrix(consts.ROW_COUNT, consts.COLUMN_COUNT);
 				this.reset();
-				// Level1.play();
 				this._initEvents();
 				this._fireShape();
 				this.chocolate_block = 1;
@@ -599,10 +600,10 @@
 						var n = 100
 					}
 					if (this.level === 2) {
-						var n = 15
+						var n = 17
 					}
 					if (this.level === 3) {
-						var n = 10
+						var n = 14
 					}
 					if (this.chocolate_block % n === 0) {
 						this._PlaceChocolate()
@@ -630,10 +631,10 @@
 				console.log(music)
 				var rows = checkFullRows(this.matrix);
 				if (this.level == 2) {
-					var n = 15;
+					var n = 17;
 				};
 				if (this.level == 3) {
-					var n = 10;
+					var n = 14;
 				};
 				if (this.chocolate_block % n == 0) {
 					image_select = Math.floor(Math.random() * 7);
@@ -658,7 +659,7 @@
 					views.setReward(reward);
 					switch (this.level) {
 						case 1: {
-							if (this.score >= 100) {
+							if (this.score >= 1000) {
 								this.pause()
 								setTimeout(calcScore(rows), 5000)
 								views._restartHandler;
@@ -690,7 +691,6 @@
 								setTimeout(function () {
 									image.src = consts.SCENE_1[6];
 								}, 30000);
-								music.src = "music/Level2.mp3"
 							}
 						}
 						case 2: {
