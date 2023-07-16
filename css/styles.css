@@ -1,0 +1,270 @@
+html,
+body {
+	height: 100%;
+}
+
+body {
+	background: #61ffa3;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	font-family: 'American Typewriter', 'Marker Felt';
+}
+
+#tetris {
+	left: 50%;
+	top: 50%;
+	position: absolute;
+	background: #0057b7;
+
+}
+
+#scene {
+	height: 100%;
+	position: absolute;
+	background: #2f2f2f;
+}
+
+#gameOver {
+	height: 100%;
+	position: absolute;
+	background: rgba(0, 0, 0, .75);
+	z-index: 999;
+	color: #ffe100;
+	text-align: center;
+	display: none;
+}
+
+#gameOver h1 {
+	margin-top: 50%;
+}
+
+#gameOver a,
+#gameOver a:visited {
+	color: #66bc29;
+	text-decoration: none;
+}
+
+#gameOver h3 {
+	color: orange;
+}
+
+#side {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-align: center;
+}
+
+#info {
+	width: 120px;
+	margin: 0 auto;
+}
+
+#preview {
+	width: 80px;
+	height: 80px;
+	background: #2f2f2f;
+	margin: 10px auto;
+}
+
+#levelInfo {
+	color: #fff;
+	font-size: 18px;
+	margin: 10px 0;
+}
+
+#level {
+	color: #ffdd00;
+	font-size: 32px;
+}
+
+#scoreInfo {
+	color: #fff;
+	font-size: 18px;
+	margin-top: 0;
+}
+
+#score {
+	color: #ffdd00;
+	font-family: 'Chalkboard SE';
+}
+
+#rewardInfo {
+	color: yellow;
+	font-weight: bold;
+	height: 20px;
+}
+
+#restartInfo {
+	color: #fff;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#restart_button {
+	height: 50px;
+	width: 50px;
+}
+
+#pause_button {
+	height: 50px;
+	width: 50px;
+}
+
+#play_button {
+	height: 50px;
+	width: 50px;
+}
+
+#info_button {
+	position: absolute;
+	height: 40px;
+	width: 40px;
+	bottom: 0;
+	right: 0;
+}
+
+
+#modal_backdrop {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background-color: rgba(0, 0, 0, 0.65);
+}
+
+#info_modal {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1010;
+	overflow: scroll;
+}
+
+.info_dialog {
+	width: auto;
+	max-width: 600px;
+	min-width: 350px;
+	min-height: 300px;
+	margin: 40px auto;
+	background-color: #fff;
+	border-radius: 15px;
+}
+
+.info_header {
+	position: relative;
+	padding: 10px 20px;
+	height: 20px;
+}
+
+.info_controls_header {
+	position: relative;
+	padding: 10px 20px;
+}
+
+.info_instructions_header {
+	position: relative;
+	padding: 10px 20px;
+}
+
+.info_close_button {
+	float: right;
+	border: none;
+	background: none;
+	cursor: pointer;
+	font-size: large;
+	padding: 10px;
+	position: relative;
+	z-index: 1000;
+}
+
+.hidden {
+	display: none;
+}
+
+
+.invisible {
+	visibility: hidden;
+}
+
+.animated {
+	-webkit-animation-duration: 1.5s;
+	animation-duration: 1.5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	max-width: 30%;
+	right: 10pt;
+	bottom: 250pt;
+}
+
+
+@-webkit-keyframes fadeOutUp {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0);
+	}
+}
+
+@keyframes fadeOutUp {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -100%, 0);
+		-ms-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0);
+	}
+}
+
+.fadeOutUp {
+	-webkit-animation-name: fadeOutUp;
+	animation-name: fadeOutUp;
+}
+
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%;
+	padding: 175px;
+	background-color: #b95151;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	z-index: 9999;
+	text-align: center;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.close {
+	position: absolute;
+	top: 125px;
+	right: 180px;
+	cursor: pointer;
+	font-size: 150pt;
+}

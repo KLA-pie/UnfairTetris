@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<div class="popup" id="myPopup">
+		<span class="close" style="color: rgb(255, 255, 255)">&times;</span>
+		<img src="Images/intro.png" alt="Popup Image" style="max-width: 30%">
+		<h2 style="font-size:50px; color: rgb(255, 255, 255);">Unfair Tetris</h2>
+		<p style="font-size:25px; color: rgb(255, 255, 255)">Oh No! It appears the evil mad mathematician who goes by
+			Kevenis Toe has stolen your
+			beloved chicken nugget.
+			The only way you can get the chicken nugget back is to beat the game that Kevenis Toe's malice has created.
+			But be careful, there are many tricks and traps that he has placed to make it difficult for you. Can you
+			beat all three levels and reach the final message to save your chicken nugget? See if you can get to 1000
+			points on the first level.</p>
+	</div>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tetris</title>
+	<audio hidden autoplay loop>
+		<source id="music" src="music/Level1.mp3" type="audio/mpeg">
+	</audio>
+	<div class="container">
+		<img src="Images/Level1_1.png" id="Sprite" alt="Image Dialogue" style="max-width: 100%;">
+	</div>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<div id="tetris">
+		<canvas id="scene"></canvas>
+		<div id="gameOver">
+			<h1>Game Over !</h1>
+			<h3>Score: <span id="finalScore">0</span></h3>
+			<h2><a href="#" id="restart">Restart</a></h2>
+
+		</div>
+		<div id="side">
+			<div id="info">
+				<h1 id="levelInfo">Level: <br><span id="level">1</span></h1>
+				<h2 id="scoreInfo">Score: <br><span id="score">0</span></h2>
+				<div id="rewardInfo" class="invisible">+<span id="reward">0</span></div>
+				<canvas id="preview"></canvas>
+				<input type="image" id="pause_button" src="Images/pause.png" alt="Pause Button" />
+				<input type="image" id="play_button" src="Images/PlayButton.png" alt="Play Button" />
+				<input type="image" id="restart_button" src="Images/restart.png" alt="Restart Button" />
+				<h1 id="restartInfo"> Click above to restart game if you can't handle the heat.</h1>
+
+			</div>
+			<input type="image" id="info_button" src="./Images/info.png" alt="info button" />
+		</div>
+
+	</div>
+
+	<div id="modal_backdrop" class="hidden"></div>
+	<div id="info_modal" class="hidden">
+		<div class="info_dialog">
+			<button type="button" class="info_close_button">&times;</button>
+			<div class="info_header">
+				<h1>Information</h1>
+			</div>
+
+			<div class="info_controls_header">
+				<h3>Controls</h3>
+				<p>Rotate - <em>up</em> arrow, Move Left - <em>left</em> arrow, Move Right - <em>right</em> arrow,</p>
+				<p>Move Down - <em>down</em> arrow, Place Block - <em>Spacebar</em></p>
+			</div>
+
+			<div class="info_instructions_header">
+				<h3>How To Play</h3>
+				<p>Isn't this your favorite game? You should know how to play this already.</p>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+<script src="dist/tetris.js"></script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		var popup = document.getElementById('myPopup');
+		var closeBtn = popup.querySelector('.close');
+
+		closeBtn.addEventListener('click', function () {
+			popup.style.display = 'none';
+			var tetris = new Tetris('tetris');
+			tetris.start();
+		});
+	});
+</script>
+
+</html>
